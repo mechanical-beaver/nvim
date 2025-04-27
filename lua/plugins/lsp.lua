@@ -1,13 +1,43 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local lspconfig = require("lspconfig")
 
-local lspconfig = require('lspconfig')
-lspconfig.lua_ls.setup{}
-lspconfig.clangd.setup{}
-lspconfig.pyright.setup {}
-lspconfig.jsonls.setup{}
-lspconfig.dockerls.setup{}
-lspconfig.bashls.setup{}
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+lspconfig.lua_ls.setup({
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            },
+        },
+    },
+})
+
+
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+})
+
+
+lspconfig.pyright.setup({
+  capabilities = capabilities,
+})
+
+
+lspconfig.jsonls.setup({
+  capabilities = capabilities,
+})
+
+
+lspconfig.dockerls.setup({
+  capabilities = capabilities,
+})
+
+
+lspconfig.bashls.setup({
+  capabilities = capabilities,
+})
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
