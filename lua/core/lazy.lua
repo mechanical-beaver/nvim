@@ -14,7 +14,7 @@ require("lazy").setup({
 	{
 	    "nvim-neo-tree/neo-tree.nvim",
     	branch = "v3.x",
-		dependencies = {"nvim-lua/plenary.nvim","nvim-tree/nvim-web-devicons","MunifTanjim/nui.nvim","s1n7ax/nvim-window-picker",},
+		dependencies = {"nvim-lua/plenary.nvim","nvim-tree/nvim-web-devicons","MunifTanjim/nui.nvim","s1n7ax/nvim-window-picker"},
 		config = function()
 	        require("plugins.neo-tree")
         end,
@@ -26,12 +26,14 @@ require("lazy").setup({
   	},
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.8',
+        dependencies = {'nvim-lua/plenary.nvim'},
     },
 
     {
         "nyoom-engineering/oxocarbon.nvim",
+--        "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000,
     },
@@ -49,6 +51,20 @@ require("lazy").setup({
         }
     },
 
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = {"nvim-tree/nvim-web-devicons"},
+        config = function()
+            require("plugins.lualine")
+        end,
+    },
+
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
+
   	{"nvim-treesitter/nvim-treesitter"},
 	{"hrsh7th/nvim-cmp"},
     {"hrsh7th/cmp-nvim-lsp"},
@@ -58,4 +74,5 @@ require("lazy").setup({
     {"neovim/nvim-lspconfig"},
     {"hrsh7th/cmp-buffer"},
     {"folke/noice.nvim"},
+    {'terrortylor/nvim-comment'},
 })
