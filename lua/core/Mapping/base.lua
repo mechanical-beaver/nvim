@@ -1,7 +1,5 @@
 vim.g.mapleader = " "
 
--- Neo-Tree --
-vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle file explorer" })
 
 -- LSP --
 vim.keymap.set('n', '<leader>lD', vim.diagnostic.open_float)
@@ -28,4 +26,3 @@ vim.keymap.set({'n', 'v'}, '<Leader>la', vim.lsp.buf.code_action, opts)
 vim.keymap.set('n', '<Leader>lf',
                 function() vim.lsp.buf.format {async = true} end, opts)
 
---  --

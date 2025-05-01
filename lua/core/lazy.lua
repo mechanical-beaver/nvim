@@ -14,26 +14,39 @@ require("lazy").setup({
 	{
 	    "nvim-neo-tree/neo-tree.nvim",
     	branch = "v3.x",
-		dependencies = {"nvim-lua/plenary.nvim","nvim-tree/nvim-web-devicons","MunifTanjim/nui.nvim","s1n7ax/nvim-window-picker"},
-		config = function()
-	        require("plugins.neo-tree")
-        end,
+		dependencies = 
+        {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+            "s1n7ax/nvim-window-picker",
+        },
+		-- config = function()
+		--         -- 	        require("plugins.neo-tree")
+        -- end,
   	},
 
   	{
     	"neovim/nvim-lspconfig",
-        dependencies = {"williamboman/mason.nvim","williamboman/mason-lspconfig.nvim"},
+        dependencies = 
+        {
+            {"williamboman/mason.nvim"},
+            {"williamboman/mason-lspconfig.nvim"},
+        },
   	},
+
 
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
-        dependencies = {'nvim-lua/plenary.nvim'},
+        dependencies = 
+        {
+            'nvim-lua/plenary.nvim'
+        },
     },
 
     {
         "nyoom-engineering/oxocarbon.nvim",
---        "navarasu/onedark.nvim",
         lazy = false,
         priority = 1000,
     },
@@ -46,17 +59,14 @@ require("lazy").setup({
             vim.o.number = true
             vim.o.termguicolors = true
         end,
-        opts = {
-            show_warnings = true,
-        }
     },
 
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = {"nvim-tree/nvim-web-devicons"},
-        config = function()
-            require("plugins.lualine")
-        end,
+        dependencies = 
+        {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
 
     {
@@ -65,14 +75,28 @@ require("lazy").setup({
         config = true
     },
 
+
+    {
+        "folke/noice.nvim",
+        dependencies = 
+        {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+    },
+
   	{"nvim-treesitter/nvim-treesitter"},
-	{"hrsh7th/nvim-cmp"},
+
+    {"neovim/nvim-lspconfig"},
+    {"hrsh7th/nvim-cmp"},
     {"hrsh7th/cmp-nvim-lsp"},
     {"hrsh7th/cmp-path"},
-    {"saadparwaiz1/cmp_luasnip"},
-	{"L3MON4D3/LuaSnip"},
-    {"neovim/nvim-lspconfig"},
     {"hrsh7th/cmp-buffer"},
-    {"folke/noice.nvim"},
-    {'terrortylor/nvim-comment'},
+    {"saadparwaiz1/cmp_luasnip"},
+    {"L3MON4D3/LuaSnip"},
+
+    {"terrortylor/nvim-comment"},
+    {"onsails/lspkind.nvim"},
+    {"akinsho/toggleterm.nvim"},
+--    {"luukvbaal/statuscol.nvim"},
 })
