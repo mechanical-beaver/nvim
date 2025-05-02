@@ -11,19 +11,21 @@ require("core.Mapping.plugins")
 require("core.Mapping.aliases")
 
 --Plugins
-    ------------------Auto complete
-    require("plugins.auto_complet.lsp")
-    require("plugins.auto_complet.cmp")
-    require("plugins.auto_complet.mason")
+------------------Auto complete
+require("plugins.auto_complet.lsp")
+require("plugins.auto_complet.cmp")
+require("plugins.auto_complet.mason")
 
-    ------------------UI
-    require("plugins.UI.treesitter")
-    require("plugins.UI.modicator")
-    require("plugins.UI.lualine")
-    require("plugins.UI.noice")
+------------------UI
+require("plugins.UI.treesitter")
+require("plugins.UI.modicator")
+require("plugins.UI.lualine")
+require("plugins.UI.noice")
 --   require("plugins.UI.statuscol")
 
-    ------------------Other
-    require("plugins.neo-tree")
-    require("plugins.comment")
-    require("plugins.term")
+------------------Other
+require("plugins.neo-tree")
+require("plugins.comment")
+require("plugins.term")
+require("plugins.buffers")
+require("plugins.conform")

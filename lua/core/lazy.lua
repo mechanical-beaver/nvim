@@ -1,45 +1,42 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    #"git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    lazypath,
-  })
+    vim.fn.system({
+        #"git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-	    "nvim-neo-tree/neo-tree.nvim",
-    	branch = "v3.x",
-		dependencies = 
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies =
         {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
             "s1n7ax/nvim-window-picker",
         },
-		-- config = function()
-		--         -- 	        require("plugins.neo-tree")
-        -- end,
-  	},
+    },
 
-  	{
-    	"neovim/nvim-lspconfig",
-        dependencies = 
+    {
+        "neovim/nvim-lspconfig",
+        dependencies =
         {
-            {"williamboman/mason.nvim"},
-            {"williamboman/mason-lspconfig.nvim"},
+            { "williamboman/mason.nvim" },
+            { "williamboman/mason-lspconfig.nvim" },
         },
-  	},
+    },
 
 
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
-        dependencies = 
+        dependencies =
         {
             'nvim-lua/plenary.nvim'
         },
@@ -63,7 +60,7 @@ require("lazy").setup({
 
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = 
+        dependencies =
         {
             "nvim-tree/nvim-web-devicons",
         },
@@ -78,25 +75,35 @@ require("lazy").setup({
 
     {
         "folke/noice.nvim",
-        dependencies = 
+        dependencies =
         {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
         }
     },
 
-  	{"nvim-treesitter/nvim-treesitter"},
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies =
+        {
+            "nvim-tree/nvim-web-devicons",
+            "moll/vim-bbye",
+        },
+    },
 
-    {"neovim/nvim-lspconfig"},
-    {"hrsh7th/nvim-cmp"},
-    {"hrsh7th/cmp-nvim-lsp"},
-    {"hrsh7th/cmp-path"},
-    {"hrsh7th/cmp-buffer"},
-    {"saadparwaiz1/cmp_luasnip"},
-    {"L3MON4D3/LuaSnip"},
 
-    {"terrortylor/nvim-comment"},
-    {"onsails/lspkind.nvim"},
-    {"akinsho/toggleterm.nvim"},
---    {"luukvbaal/statuscol.nvim"},
+    { "neovim/nvim-lspconfig" },
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-buffer" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "L3MON4D3/LuaSnip" },
+
+    { "terrortylor/nvim-comment" },
+    { "onsails/lspkind.nvim" },
+    { "akinsho/toggleterm.nvim" },
+    { "nvim-treesitter/nvim-treesitter" },
+    { "stevearc/conform.nvim" }
 })

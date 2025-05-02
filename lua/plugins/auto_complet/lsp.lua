@@ -15,27 +15,27 @@ lspconfig.lua_ls.setup({
 
 
 lspconfig.clangd.setup({
-  capabilities = capabilities,
+    capabilities = capabilities,
 })
 
 
 lspconfig.pyright.setup({
-  capabilities = capabilities,
+    capabilities = capabilities,
 })
 
 
 lspconfig.jsonls.setup({
-  capabilities = capabilities,
+    capabilities = capabilities,
 })
 
 
 lspconfig.dockerls.setup({
-  capabilities = capabilities,
+    capabilities = capabilities,
 })
 
 
 lspconfig.bashls.setup({
-  capabilities = capabilities,
+    capabilities = capabilities,
 })
 
 
@@ -43,6 +43,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-        local opts = {buffer = ev.buf}
+        local opts = { buffer = ev.buf }
     end
 })

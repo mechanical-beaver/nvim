@@ -4,26 +4,26 @@ local lspkind = require("lspkind")
 local mappings = require("core.Mapping.plugins")
 
 cmp.setup({
-    sources = 
+    sources =
     {
-        {name = "nvim_lsp"},
-        {name = "path"},
-        {name = "buffer"},
-        {name = "luasnip"},
+        { name = "nvim_lsp" },
+        { name = "path" },
+        { name = "buffer" },
+        { name = "luasnip" },
     },
 
-    formatting = 
+    formatting =
     {
         format = lspkind.cmp_format({
             mode = 'symbol_text',
-            maxwidth = 
+            maxwidth =
             {
                 menu = 50,
                 abbr = 50,
             },
             ellipsis_char = '...',
             show_labelDetails = true,
-            menu = 
+            menu =
             {
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snip]",
@@ -42,6 +42,6 @@ cmp.setup({
         end,
     },
 
-    
+
 
 })
