@@ -1,11 +1,6 @@
 --TODO: сделать 2 отдельные строки нумерации (относительную и абсолютную)
---TODO: заменить conform на null-ls
---TODO: добавить автозакрытие <> скобок
---TODO: изменить стиль bufflibe
 --TODO: сделать более удобное комментирование
 --TODO: Dashbord
---TODO: Witch Key
-
 
 --Base
 require("core.lazy")
@@ -28,11 +23,13 @@ require("plugins.UI.treesitter")
 require("plugins.UI.modicator")
 require("plugins.UI.lualine")
 require("plugins.UI.noice")
---   require("plugins.UI.statuscol")
+require("plugins.UI.buffers")
 
-------------------Other
-require("plugins.neo-tree")
-require("plugins.comment")
-require("plugins.term")
-require("plugins.buffers")
-require("plugins.conform")
+------------------Text Edit
+require("plugins.text-edit.comment")
+require("plugins.text-edit.autopairs")
+require("plugins.text-edit.none-ls")
+
+------------------Window
+require("plugins.window.term")
+require("plugins.window.neo-tree")
