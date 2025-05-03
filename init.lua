@@ -1,6 +1,10 @@
 --TODO: сделать 2 отдельные строки нумерации (относительную и абсолютную)
 --TODO: сделать более удобное комментирование
---TODO: Dashbord
+--TODO: Dashbord (Snacks)
+--TODO: PlatformIO
+--TODO: Codeium
+--TODO: marks
+--TODO: NeoDev
 
 --Base
 require("core.lazy")
