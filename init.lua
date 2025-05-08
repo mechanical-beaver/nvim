@@ -4,7 +4,7 @@
 --TODO: PlatformIO
 --TODO: Codeium
 --TODO: marks
---TODO: NeoDev
+--TODO: NeoDev (Настроить)
 
 --Base
 require("core.lazy")
@@ -37,3 +37,5 @@ require("plugins.text-edit.none-ls")
 ------------------Window
 require("plugins.window.term")
 require("plugins.window.neo-tree")
+
+require("plugins.snacks")

@@ -45,6 +45,12 @@ require("lazy").setup({
 	},
 
 	{
+		"folke/snacks.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+
+	{
 		"mawkler/modicator.nvim",
 		init = function()
 			vim.o.cursorline = true
@@ -107,4 +113,5 @@ require("lazy").setup({
 	{ "onsails/lspkind.nvim" },
 	{ "akinsho/toggleterm.nvim" },
 	{ "nvim-treesitter/nvim-treesitter" },
+	{ "folke/neodev.nvim" },
 })
