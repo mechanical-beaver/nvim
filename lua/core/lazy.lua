@@ -114,4 +114,6 @@ require("lazy").setup({
 	{ "akinsho/toggleterm.nvim" },
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "folke/neodev.nvim" },
+	{ "olimorris/persisted.nvim" },
+	{ "ahmedkhalf/project.nvim" },
 })

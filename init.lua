@@ -37,5 +37,7 @@ require("plugins.text-edit.none-ls")
 ------------------Window
 require("plugins.window.term")
 require("plugins.window.neo-tree")
+require("plugins.window.telescope")
+require("plugins.window.projects")
 
 require("plugins.snacks")
