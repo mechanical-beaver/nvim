@@ -7,13 +7,13 @@ require("snacks").setup({
 			pick = nil,
 			---@type snacks.dashboard.Item[]
 			keys = {
-				{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-				{ icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+				{ icon = "", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+				{ icon = "", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
 				{ icon = "", key = "p", desc = "Projects", action = ":Telescope projects" },
-				{ icon = " ", key = "s", desc = "Sessions", action = ":Telescope persisted" },
-				-- {icon = "", key = "u", desc = "PlatformIO", action ""}
-				{ icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-				{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+				{ icon = "", key = "s", desc = "Sessions", action = ":Telescope persisted" },
+				{ icon = "󰒲", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+				{ icon = "󰠥", key = "M", desc = "Mason", action = ":Mason" },
+				{ icon = "", key = "q", desc = "Quit", action = ":qa" },
 			},
 			header = [[
 ██╗  ██╗ █████╗ ███████╗

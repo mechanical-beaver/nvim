@@ -15,23 +15,41 @@ lspconfig.lua_ls.setup({
 
 lspconfig.clangd.setup({
 	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
+	flags = lsp_flags,
+	cmd = { "clangd", },
+	single_file_support = true,
+	root_dir = lspconfig.util.root_pattern(
+		".clangd",
+		".clang-tidy",
+		".clang-format",
+		"compile_commands.json",
+		"compile_flags.txt",
+		"configure.ac",
+		".git"
+	),
 })
 
-lspconfig.ruff.setup({
-	capabilities = capabilities,
-})
+-- lspconfig.arduino_language_server.setup({
+-- 	capabilities = capabilities,
+-- })
 
-lspconfig.jsonls.setup({
-	capabilities = capabilities,
-})
-
-lspconfig.dockerls.setup({
-	capabilities = capabilities,
-})
-
-lspconfig.bashls.setup({
-	capabilities = capabilities,
-})
+-- lspconfig.ruff.setup({
+-- 	capabilities = capabilities,
+-- })
+--
+-- lspconfig.jsonls.setup({
+-- 	capabilities = capabilities,
+-- })
+--
+-- lspconfig.dockerls.setup({
+-- 	capabilities = capabilities,
+-- })
+--
+-- lspconfig.bashls.setup({
+-- 	capabilities = capabilities,
+-- })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),

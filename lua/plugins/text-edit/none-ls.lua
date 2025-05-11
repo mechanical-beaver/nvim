@@ -1,18 +1,25 @@
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-null_ls.setup({
-    sources = {
-		-- Lua
-		null_ls.builtins.formatting.stylua,
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
 
-		-- Python
-        require("none-ls.formatting.ruff"),
-        require("none-ls.diagnostics.ruff"),
+null_ls.setup({
+	sources = {
+		-- Lua
+		formatting.stylua,
 
 		-- C/C++
-		null_ls.builtins.formatting.clang_format,
-        require("none-ls.diagnostics.cpplint"),
+		formatting.clang_format.with({
+			extra_args = {
+				"--style=file",
+				"--assume-filename=C:/Users/ASP/AppData/Local/nvim/formatts/.clang-format",
+			},
+		}),
+
+		require("none-ls.diagnostics.cpplint").with({
+			filetypes = { "cpp", "c" },
+		}),
 	},
 
 	on_attach = function(client, bufnr)
@@ -28,7 +35,6 @@ null_ls.setup({
 							return client.name == "null-ls"
 						end,
 					})
-					-- vim.lsp.buf.formatting_sync()
 				end,
 			})
 		end

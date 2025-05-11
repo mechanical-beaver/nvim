@@ -27,6 +27,8 @@ require("lazy").setup({
 		dependencies = {
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
+            { "jay-babu/mason-null-ls.nvim" },
+
 		},
 	},
 
@@ -116,4 +118,5 @@ require("lazy").setup({
 	{ "folke/neodev.nvim" },
 	{ "olimorris/persisted.nvim" },
 	{ "ahmedkhalf/project.nvim" },
+	{ "anurag3301/nvim-platformio.lua" },
 })

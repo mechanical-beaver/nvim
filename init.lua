@@ -41,3 +41,4 @@ require("plugins.window.telescope")
 require("plugins.window.projects")
 
 require("plugins.snacks")
+require("plugins.pio")
