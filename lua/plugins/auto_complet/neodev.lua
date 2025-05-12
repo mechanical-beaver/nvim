@@ -1,14 +1,20 @@
-require("neodev").setup({
-})
+return {
+	{
+		"folke/neodev.nvim",
+		config = function()
+			require("neodev").setup({})
 
-local lspconfig = require('lspconfig')
+			local lspconfig = require("lspconfig")
 
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      completion = {
-        callSnippet = "Replace"
-      }
-    }
-  }
-})
+			lspconfig.lua_ls.setup({
+				settings = {
+					Lua = {
+						completion = {
+							callSnippet = "Replace",
+						},
+					},
+				},
+			})
+		end,
+	},
+}
