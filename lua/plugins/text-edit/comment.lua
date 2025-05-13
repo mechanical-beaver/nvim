@@ -1,11 +1,8 @@
 return {
 	{
-		"terrortylor/nvim-comment",
+		"numToStr/Comment.nvim",
 		config = function()
-			require("nvim_comment").setup({
-				line_mapping = "<leader>cl",
-				operator_mapping = "<leader>c",
-			})
+			require("Comment").setup(require("core.Mapping.plugins").comments_mapping)
 		end,
 	},
 }

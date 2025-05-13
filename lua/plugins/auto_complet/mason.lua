@@ -3,12 +3,12 @@ return {
 		"williamboman/mason.nvim",
 		dependencies = {
 			{ "williamboman/mason-lspconfig.nvim" },
-			{ "jay-babu/mason-null-ls.nvim" },
+			-- { "jay-babu/mason-null-ls.nvim" },
 		},
 		config = function()
 			local mason = require("mason")
 			local mason_lspconfig = require("mason-lspconfig")
-			local mason_null_ls = require("mason-null-ls")
+			-- local mason_null_ls = require("mason-null-ls")
 
 			mason.setup()
 
@@ -19,14 +19,14 @@ return {
 				},
 			})
 
-			mason_null_ls.setup({
-				ensure_installed = {
-					"stylua", --Lua formatter
-
-					"clang-format", -- C/C++ formatter
-					"cpplint",
-				},
-			})
+			-- mason_null_ls.setup({
+			-- 	ensure_installed = {
+			-- 		"stylua", --Lua formatter
+			--
+			-- 		"clang-format", -- C/C++ formatter
+			-- 		"cpplint",
+			-- 	},
+			-- })
 		end,
 	},
 }

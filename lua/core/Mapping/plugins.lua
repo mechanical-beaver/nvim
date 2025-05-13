@@ -1,18 +1,22 @@
-------------------Neo Tree
-vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle file explorer" })
+local M = {}
 
-------------------Toggle Term
-vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Toggle Terminal" })
-
-------------------buffers
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
-vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { desc = "Close buffer" })
-
-------------------cmp
 local cmp = require("cmp")
 
-return {
+M.commands_mapping = function()
+	------------------Neo Tree
+	vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle file explorer" })
+
+	------------------Toggle Term
+	vim.keymap.set("n", "<leader>tt", ":ToggleTerm<CR>", { desc = "Toggle Terminal" })
+
+	------------------buffers
+	vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
+	vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+	vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { desc = "Close buffer" })
+end
+
+------------------cmp
+M.cmp_mapping = {
 	["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 	["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 
@@ -44,3 +48,15 @@ return {
 	-- ['<Down>'] = cmp.mapping.scroll_docs(-4),
 	-- ['<Up>'] = cmp.mapping.scroll_docs(4),
 }
+
+------------------comments
+M.comments_mapping = {
+	toggler = {
+		line = "cc",
+	},
+	opleader = {
+		line = "c",
+	},
+}
+
+return M

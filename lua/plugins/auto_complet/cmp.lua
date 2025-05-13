@@ -12,7 +12,7 @@ return {
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			local lspkind = require("lspkind")
-			-- local mappings = require("core.Mapping.plugins")
+			-- local mappings = require("core.Mapping.plugins").cmp_mapping
 
 			cmp.setup({
 				sources = {
@@ -40,7 +40,7 @@ return {
 					}),
 				},
 
-				mapping = mappings,
+				mapping = require("core.Mapping.plugins").cmp_mapping,
 
 				snippet = {
 					expand = function(args)
