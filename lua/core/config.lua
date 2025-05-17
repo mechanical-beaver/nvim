@@ -9,10 +9,17 @@ local termfeatures = vim.g.termfeatures or {}
 termfeatures.osc52 = false
 vim.g.termfeatures = termfeatures
 
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+})
+
 --vim.o.termguicolors = true
 --vim.o.cursorline = true
 --vim.o.number = true
 
 if vim.fn.argc() == 0 then
-	vim.cmd("Bdelete")
+    vim.cmd("Bdelete")
 end
