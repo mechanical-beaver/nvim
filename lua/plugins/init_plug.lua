@@ -1,5 +1,7 @@
 return {
     require("plugins.UI.buffers"),
+    require("plugins.UI.gitsigns"),
+    require("plugins.UI.indetn-line"),
     require("plugins.UI.lualine"),
     require("plugins.UI.modicator"),
     require("plugins.UI.noice"),

@@ -1,5 +1,5 @@
-vim.cmd("colorscheme oxocarbon")
-vim.o.background = "dark"
+vim.cmd("colorscheme moonfly")
+-- vim.o.background = "dark"
 
 local kinds = {
     "Text", "Method", "Function", "Constructor", "Field", "Variable",
