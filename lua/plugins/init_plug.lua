@@ -15,7 +15,7 @@ return {
     require("plugins.text-edit.autopairs"),
     require("plugins.text-edit.comment"),
     require("plugins.text-edit.formatter"),
-    require("plugins.text-edit.linter"),
+    -- require("plugins.text-edit.linter"),
 
     require("plugins.window.neo-tree"),
     require("plugins.window.projects"),

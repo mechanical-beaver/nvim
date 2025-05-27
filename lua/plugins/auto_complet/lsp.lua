@@ -26,13 +26,18 @@ return {
                 on_attach = on_attach,
                 filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
                 flags = lsp_flags,
-                cmd = { "clangd" },
+                cmd = {
+                    "clangd",
+                    -- "--query-driver=C:/ProgramData/mingw64/mingw64/bin/g++.exe",
+                    -- "--query-driver=C:/Users/ASP/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-g++.exe",
+                },
                 single_file_support = true,
                 root_dir = lspconfig.util.root_pattern(
                     ".clangd",
                     ".clang-tidy",
                     ".clang-format",
                     "compile_commands.json",
+                    "platformio.ini",
                     "compile_flags.txt",
                     "configure.ac",
                     ".git"

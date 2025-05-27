@@ -11,7 +11,7 @@ return {
         config = function()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
-            local lspkind = require("lspkind")
+            -- local lspkind = require("lspkind")
             -- local mappings = require("core.Mapping.plugins").cmp_mapping
 
             cmp.setup({
@@ -21,24 +21,56 @@ return {
                     { name = "buffer" },
                     { name = "luasnip" },
                 },
+                window = {
+                    completion = cmp.config.window.bordered({
+                        winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
+                        col_offset = -3,
+                        side_padding = 1,
+                        max_width = 60,  -- ширина окна автодополнения
+                        max_height = 15, -- высота окна автодополнения
+                    }),
+                },
+
+
 
                 formatting = {
-                    format = lspkind.cmp_format({
-                        mode = "symbol_text",
-                        maxwidth = {
-                            menu = 50,
-                            abbr = 50,
-                        },
-                        ellipsis_char = "...",
-                        show_labelDetails = true,
-                        menu = {
+                    format = function(entry, vim_item)
+                        local lspkind = require("lspkind")
+                        -- Получаем иконку по типу
+                        local icon = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
+                        -- Убираем аргументы из abbr (текст подсказки)
+                        vim_item.abbr = vim_item.abbr:gsub("%b()", "")
+                        -- Добавляем иконку перед текстом abbr
+                        vim_item.abbr = icon .. " " .. vim_item.abbr
+                        -- Можно настроить menu как в твоём конфиге
+                        local menus = {
                             nvim_lsp = "[LSP]",
                             luasnip = "[Snip]",
                             buffer = "[Buf]",
                             path = "[Path]",
-                        },
-                    }),
+                        }
+                        vim_item.menu = menus[entry.source.name] or ""
+                        return vim_item
+                    end,
                 },
+
+                -- formatting = {
+                --     format = lspkind.cmp_format({
+                --         mode = "symbol",
+                --         maxwidth = {
+                --             menu = 50,
+                --             abbr = 50,
+                --         },
+                --         ellipsis_char = "...",
+                --         show_labelDetails = true,
+                --         menu = {
+                --             nvim_lsp = "[LSP]",
+                --             luasnip = "[Snip]",
+                --             buffer = "[Buf]",
+                --             path = "[Path]",
+                --         },
+                --     }),
+                -- },
 
                 mapping = require("core.Mapping.plugins").cmp_mapping(),
 
