@@ -12,6 +12,9 @@ return {
     require("plugins.auto_complet.mason"),
     require("plugins.auto_complet.neodev"),
 
+    require("plugins.navigation.snacks"),
+    require("plugins.navigation.flash"),
+
     require("plugins.text-edit.autopairs"),
     require("plugins.text-edit.comment"),
     require("plugins.text-edit.formatter"),
@@ -23,5 +26,5 @@ return {
     require("plugins.window.term"),
 
     require("plugins.pio"),
-    require("plugins.snacks"),
+    -- require("plugins.snacks"),
 }

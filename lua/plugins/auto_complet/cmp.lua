@@ -54,24 +54,6 @@ return {
                     end,
                 },
 
-                -- formatting = {
-                --     format = lspkind.cmp_format({
-                --         mode = "symbol",
-                --         maxwidth = {
-                --             menu = 50,
-                --             abbr = 50,
-                --         },
-                --         ellipsis_char = "...",
-                --         show_labelDetails = true,
-                --         menu = {
-                --             nvim_lsp = "[LSP]",
-                --             luasnip = "[Snip]",
-                --             buffer = "[Buf]",
-                --             path = "[Path]",
-                --         },
-                --     }),
-                -- },
-
                 mapping = require("core.Mapping.plugins").cmp_mapping(),
 
                 snippet = {
