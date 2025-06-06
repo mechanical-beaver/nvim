@@ -23,13 +23,13 @@ return {
 
             lspconfig.clangd.setup({
                 capabilities = capabilities,
-                on_attach = on_attach,
+                on_attach = function(client, bufnr)
+                    client.handlers["textDocument/publishDiagnostics"] = function() end
+                end,
                 filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
                 flags = lsp_flags,
                 cmd = {
                     "clangd",
-                    -- "--query-driver=C:/ProgramData/mingw64/mingw64/bin/g++.exe",
-                    -- "--query-driver=C:/Users/ASP/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-g++.exe",
                 },
                 single_file_support = true,
                 root_dir = lspconfig.util.root_pattern(

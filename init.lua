@@ -1,6 +1,3 @@
---TODO: Codeium
---TODO: marks
-
 --Base
 require("core.lazy")
 require("core.config")

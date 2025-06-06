@@ -27,15 +27,16 @@ return {
                                 action = ":lua Snacks.dashboard.pick('oldfiles')",
                             },
                             { icon = "", key = "p", desc = "Projects", action = ":Telescope projects" },
-                            { icon = "", key = "s", desc = "Sessions", action = ":Telescope persisted" },
-                            {
-                                icon = "󰒲",
-                                key = "L",
-                                desc = "Lazy",
-                                action = ":Lazy",
-                                enabled = package.loaded.lazy ~= nil,
-                            },
-                            { icon = "󰠥", key = "M", desc = "Mason", action = ":Mason" },
+                            -- { icon = "", key = "s", desc = "Sessions", action = ":Telescope persisted" },
+                            -- {
+                            --     icon = "󰒲",
+                            --     key = "L",
+                            --     desc = "Lazy",
+                            --     action = ":Lazy",
+                            --     enabled = package.loaded.lazy ~= nil,
+                            -- },
+                            -- { icon = "󰠥", key = "M", desc = "Mason", action = ":Mason" },
+                            { icon = "", key = "g", desc = "NeoGit", action = ":Neogit" },
                             { icon = "", key = "q", desc = "Quit", action = ":qa" },
                         },
                         header = [[
@@ -47,18 +48,6 @@ return {
  █   █    ▐   ▐    ▐
  ▐   ▐
  ]]
-
-                        --                         header = [[
-                        -- /\\\        /\\\     /\\\\\\\\\\       /\\\\\\\\\\\
-                        -- \/\\\       \/\\\   /\\\///////\\\    /\\\/////////\\\
-                        --  \/\\\       \/\\\  /\\\        /\\\  \//\\\      \///
-                        --   \/\\\\\\\\\\\\\\\ \/\\\       \/\\\   \////\\\
-                        --    \/\\\/////////\\\ \/\\\\\\\\\\\\\\\      \////\\\
-                        --     \/\\\       \/\\\ \/\\\/////////\\\         \////\\\
-                        --      \/\\\       \/\\\ \/\\\       \/\\\  /\\\      \//\\\
-                        --       \/\\\       \/\\\ \/\\\       \/\\\ \///\\\\\\\\\\\/
-                        --        \///        \///  \///        \///    \///////////    ]]
-
                     },
 
                     sections = {

@@ -10,7 +10,9 @@ termfeatures.osc52 = false
 vim.g.termfeatures = termfeatures
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = {
+        source = "if_many",
+    },
     signs = true,
     underline = true,
     update_in_insert = false,

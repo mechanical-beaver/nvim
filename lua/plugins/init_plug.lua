@@ -18,13 +18,13 @@ return {
     require("plugins.text-edit.autopairs"),
     require("plugins.text-edit.comment"),
     require("plugins.text-edit.formatter"),
-    -- require("plugins.text-edit.linter"),
+    require("plugins.text-edit.linter"),
 
     require("plugins.window.neo-tree"),
+    require("plugins.window.neogit"),
     require("plugins.window.projects"),
     require("plugins.window.telescope"),
     require("plugins.window.term"),
 
     require("plugins.pio"),
-    -- require("plugins.snacks"),
 }
