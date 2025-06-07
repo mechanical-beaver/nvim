@@ -23,13 +23,18 @@ return {
 
             lspconfig.clangd.setup({
                 capabilities = capabilities,
-                on_attach = function(client, bufnr)
-                    client.handlers["textDocument/publishDiagnostics"] = function() end
-                end,
+                on_attach = on_attach,
+                -- handlers = {
+                --     ["textDocument/publishDiagnostics"] = function() end
+                -- },
+                -- on_attach = function(client, bufnr)
+                --     client.handlers["textDocument/publishDiagnostics"] = function() end
+                -- end,
                 filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp" },
                 flags = lsp_flags,
                 cmd = {
                     "clangd",
+                    "--clang-tidy=false"
                 },
                 single_file_support = true,
                 root_dir = lspconfig.util.root_pattern(

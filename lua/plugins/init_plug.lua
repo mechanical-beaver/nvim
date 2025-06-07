@@ -8,6 +8,7 @@ return {
     require("plugins.UI.treesitter"),
 
     require("plugins.auto_complet.cmp"),
+    require("plugins.auto_complet.linter"),
     require("plugins.auto_complet.lsp"),
     require("plugins.auto_complet.mason"),
     require("plugins.auto_complet.neodev"),
@@ -18,7 +19,6 @@ return {
     require("plugins.text-edit.autopairs"),
     require("plugins.text-edit.comment"),
     require("plugins.text-edit.formatter"),
-    require("plugins.text-edit.linter"),
 
     require("plugins.window.neo-tree"),
     require("plugins.window.neogit"),

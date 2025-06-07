@@ -1,17 +1,21 @@
 local M = {}
 
 M.commands_mapping = function()
+    local keyset = vim.keymap.set
+    local opts   = { noremap = true, silent = true }
+    local tbl    = vim.tbl_extend
+
     ------------------Neo Tree
-    vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle file explorer" })
+    keyset("n", "<leader>e", ":Neotree toggle<CR>", tbl("force", opts, { desc = "Toggle file explorer" }))
 
     ------------------Toggle Term
-    vim.keymap.set("n", [[<C-\>]], ":ToggleTerm<CR>", { desc = "Toggle Terminal" })
-    vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
+    keyset("n", [[<C-\>]], ":ToggleTerm<CR>", tbl("force", opts, { desc = "Toggle Terminal" }))
+    keyset("t", "<esc>", [[<C-\><C-n>]])
 
     ------------------buffers
-    vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
-    vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
-    vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { desc = "Close buffer" })
+    keyset("n", "<Tab>", ":BufferLineCycleNext<CR>", tbl("force", opts, { desc = "Next buffer" }))
+    keyset("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", tbl("force", opts, { desc = "Prev buffer" }))
+    keyset("n", "<leader>x", ":Bdelete<CR>", tbl("force", opts, { desc = "Close buffer" }))
 end
 
 ------------------cmp
