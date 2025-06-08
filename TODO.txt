@@ -1,0 +1,3 @@
+Snipets
+Session manager
+edit cmp

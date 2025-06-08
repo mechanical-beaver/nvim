@@ -1,20 +1,21 @@
 return {
-	{
-		"folke/neodev.nvim",
-		config = function()
-			require("neodev").setup({})
+    {
+        "folke/neodev.nvim",
+        event = { "InsertEnter" },
+        config = function()
+            require("neodev").setup({})
 
-			local lspconfig = require("lspconfig")
+            local lspconfig = require("lspconfig")
 
-			lspconfig.lua_ls.setup({
-				settings = {
-					Lua = {
-						completion = {
-							callSnippet = "Replace",
-						},
-					},
-				},
-			})
-		end,
-	},
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        completion = {
+                            callSnippet = "Replace",
+                        },
+                    },
+                },
+            })
+        end,
+    },
 }

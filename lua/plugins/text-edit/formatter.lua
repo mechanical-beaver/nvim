@@ -1,6 +1,7 @@
 return {
     {
         "stevearc/conform.nvim",
+        ft = require("core.ft"),
         config = function()
             require("conform").setup({
                 format_on_save = {

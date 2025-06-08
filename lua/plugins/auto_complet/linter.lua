@@ -1,6 +1,7 @@
 return {
     {
         "mfussenegger/nvim-lint",
+        ft = require("core.ft"),
         config = function()
             local lint = require("lint")
 

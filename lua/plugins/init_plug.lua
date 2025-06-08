@@ -1,4 +1,6 @@
-return {
+local M = {}
+
+M.Lazy = {
     require("plugins.UI.buffers"),
     require("plugins.UI.gitsigns"),
     require("plugins.UI.indetn-line"),
@@ -22,9 +24,14 @@ return {
 
     require("plugins.window.neo-tree"),
     require("plugins.window.neogit"),
-    require("plugins.window.projects"),
+    -- require("plugins.window.projects"),
     require("plugins.window.telescope"),
     require("plugins.window.term"),
 
     require("plugins.pio"),
+    require("plugins.witch"),
+
+    require("core.colors"),
 }
+
+return M

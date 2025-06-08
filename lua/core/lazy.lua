@@ -11,21 +11,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    require("plugins.init_plug"),
+    require("plugins.init_plug").Lazy,
 
-    {
-        -- "nyoom-engineering/oxocarbon.nvim",
-        "bluz71/vim-moonfly-colors",
-        lazy = false,
-        priority = 1000,
-    },
+    -- { "L3MON4D3/LuaSnip" },
 
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-    },
-
-    { "L3MON4D3/LuaSnip" },
-
-    { "olimorris/persisted.nvim" },
+    -- { "olimorris/persisted.nvim" },
 })
