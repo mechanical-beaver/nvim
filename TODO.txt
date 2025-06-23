@@ -1,3 +1,4 @@
 Snipets
 Session manager
 edit cmp
+edit term

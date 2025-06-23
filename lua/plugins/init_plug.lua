@@ -16,7 +16,7 @@ M.Lazy = {
     require("plugins.auto_complet.neodev"),
 
     require("plugins.navigation.snacks"),
-    require("plugins.navigation.flash"),
+    require("plugins.navigation.hop"),
 
     require("plugins.text-edit.autopairs"),
     require("plugins.text-edit.comment"),
@@ -24,7 +24,6 @@ M.Lazy = {
 
     require("plugins.window.neo-tree"),
     require("plugins.window.neogit"),
-    -- require("plugins.window.projects"),
     require("plugins.window.telescope"),
     require("plugins.window.term"),
 

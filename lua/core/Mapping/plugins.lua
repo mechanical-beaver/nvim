@@ -16,8 +16,13 @@ M.commands_mapping = function()
     keyset("n", "<Tab>", ":BufferLineCycleNext<CR>", tbl("force", opts, { desc = "Next buffer" }))
     keyset("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", tbl("force", opts, { desc = "Prev buffer" }))
     keyset("n", "<leader>x", ":Bdelete<CR>", tbl("force", opts, { desc = "Close buffer" }))
-end
 
+    ------------------hop
+    keyset("n", "<leader>q1", ":HopChar1<CR>", tbl("force", opts, { desc = "Select one char to jump" }))
+    keyset("n", "<leader>q2", ":HopChar2<CR>", tbl("force", opts, { desc = "Select two chars to jump" }))
+    keyset("n", "<leader>qw", ":HopWord<CR>", tbl("force", opts, { desc = "Choose a word to jump" }))
+    keyset("n", "<leader>ql", ":HopLine<CR>", tbl("force", opts, { desc = "Select a line to jump" }))
+end
 ------------------cmp
 M.cmp_mapping = function()
     local cmp = require("cmp")
@@ -53,8 +58,6 @@ M.cmp_mapping = function()
             end
         end, { "i", "s" }),
 
-        -- ['<Down>'] = cmp.mapping.scroll_docs(-4),
-        -- ['<Up>'] = cmp.mapping.scroll_docs(4),
     }
 end
 
@@ -65,33 +68,6 @@ M.comments_mapping = {
     },
     opleader = {
         line = "c",
-    },
-}
-
-M.flash_mapping = {
-    {
-        "s",
-        mode = { "n", "x", "o" },
-        function() require("flash").jump() end,
-        desc = "Flash Jump"
-    },
-    {
-        "S",
-        mode = { "n", "x", "o" },
-        function() require("flash").treesitter() end,
-        desc = "Flash Treesitter"
-    },
-    {
-        "f",
-        mode = { "n", "x", "o" },
-        function() require("flash").jump({ search = { mode = "char" } }) end,
-        desc = "Flash forward"
-    },
-    {
-        "F",
-        mode = { "n", "x", "o" },
-        function() require("flash").jump({ search = { mode = "char", reverse = true } }) end,
-        desc = "Flash backward"
     },
 }
 
