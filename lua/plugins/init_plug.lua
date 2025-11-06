@@ -8,6 +8,7 @@ M.Lazy = {
     require("plugins.UI.modicator"),
     require("plugins.UI.noice"),
     require("plugins.UI.treesitter"),
+    require("plugins.UI.ufo"),
 
     require("plugins.auto_complet.cmp"),
     require("plugins.auto_complet.linter"),
@@ -20,7 +21,7 @@ M.Lazy = {
 
     require("plugins.text-edit.autopairs"),
     require("plugins.text-edit.comment"),
-    require("plugins.text-edit.formatter"),
+    require("plugins.text-edit.format"),
 
     require("plugins.window.neo-tree"),
     require("plugins.window.neogit"),

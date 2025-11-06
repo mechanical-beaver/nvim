@@ -13,6 +13,7 @@ return {
 
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
+                filetypes = { 'lua' },
                 settings = {
                     Lua = {
                         diagnostics = {
@@ -49,6 +50,16 @@ return {
                     ".git"
                 ),
             })
+
+            lspconfig.html.setup(
+                {
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                    filetypes = { "html", "htmldjango" },
+                }
+            )
+
+            lspconfig.pyright.setup({})
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("UserLspConfig", {}),

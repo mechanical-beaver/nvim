@@ -22,7 +22,7 @@ return {
 
             require("project_nvim").setup({
                 detection_methods = { "pattern" },
-                patterns = { ".git", "src" },
+                patterns = { ".git", "src" , "venv"},
             })
         end,
     },

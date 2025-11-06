@@ -8,20 +8,24 @@ return {
                     "c",
                     "lua",
                     "vim",
-                    -- "arduino",
-                    -- "bash",
                     "cpp",
-                    -- "dockerfile",
                     "ini",
                     "json",
-                    -- "python",
+                    "html",
+                    "css",
+                    "javascript",
+                    "typescript",
+                    "tsx",
+                    "python",
                 },
                 sync_install = false,
                 auto_install = true,
 
                 highlight = {
                     enable = true,
+                    additional_vim_regex_highlighting = false,
                 },
+
             })
         end,
     },

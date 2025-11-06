@@ -1,6 +1,7 @@
 --Base
 require("core.lazy")
 require("core.config")
+
 --require("core.colors")
 
 --Mapping
