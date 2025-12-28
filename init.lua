@@ -1,0 +1,6 @@
+require("core.gui_config")
+require("core.lazy")
+require("core.general")
+require("core.keymap")
+require("core.alias")
+require("core.autocmd")
